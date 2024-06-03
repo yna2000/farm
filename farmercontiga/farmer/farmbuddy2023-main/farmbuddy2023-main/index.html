@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FarmBuddy</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="./Styles/style.css" />
+  <link rel="stylesheet" href="../../../cookies.css">
+</head>
+<body>
+<div id="cookies-popup" class="cookies-popup">
+  <p>This website uses cookies to ensure you get the best experience on our website.</p>
+  <button id="accept-cookies-btn">Accept</button>
+</div>
+<script>
+  function setCookie(name, value, days) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+    document.cookie = name + '=' + value + ';expires=' + expires.toUTCString();
+  }
+  function getCookie(name) {
+    const keyValue = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+    return keyValue ? keyValue[2] : null;
+  }
+  function checkCookiesAccepted() {
+    return getCookie('cookiesAccepted');
+  }
+  function showCookiesPopup() {
+    const cookiesPopup = document.getElementById('cookies-popup');
+    cookiesPopup.style.display = 'block';
+  }
+  function hideCookiesPopup() {
+    const cookiesPopup = document.getElementById('cookies-popup');
+    cookiesPopup.style.display = 'none';
+  }
+  function acceptCookies() {
+    setCookie('cookiesAccepted', 'true', 365);
+    hideCookiesPopup();
+    window.removeEventListener('scroll', handleScrollAccept);
+  }
+  function handleScrollAccept() {
+    acceptCookies();
+  }
+  document.getElementById('accept-cookies-btn').addEventListener('click', acceptCookies);
+  window.addEventListener('load', function() {
+    if (!checkCookiesAccepted()) {
+      showCookiesPopup();
+      window.addEventListener('scroll', handleScrollAccept);
+    }
+  });
+</script>
+</body>
+</html>
+    <div class="spinnerContainer">
+      <div class="spinner"></div>
+      <div class="loader">
+        <p>loading</p>
+        <div class="words">
+          <span class="word">header</span>
+          <span class="word">images</span>
+          <span class="word">products</span>
+          <span class="word">features</span>
+          <span class="word">categories</span>
+        </div>
+      </div>
+    </div>
+    <header class="header">
+      <a href="#" class="logo"> <i class="fas fa-seedling"></i> FarmBuddy </a>
+      <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#features">features</a>
+        <a href="#categories">categories</a>
+        <a href="#products">products</a>
+        <a href="#learn">Learn</a>
+        <a href="#about">Team</a>
+        <a class="sin" href="./Sign-in/Index.html">Sign in/up</a>
+      </nav>
+      <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+        <div class="fas fa-search" style="display: none" id="search-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <div class="fas fa-user" id="login-btn"></div>
+      </div>
+    </header>
+    <div id="lod">
+      <section class="home" id="home">
+        <div class="content">
+          <h3><span>fresh</span> and <span>organic</span> products for you</h3>
+          <p>From our Farm to your Home without any intermediaries</p>
+          <a href="#products" class="btn">shop now</a>
+        </div>
+      </section>
+      <section class="features" id="features">
+        <h1 class="heading">our <span>features</span></h1>
+        <div class="box-container">
+          <div class="box">
+            <img
+              src="https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              alt=""
+            />
+            <h3>fresh and organic</h3>
+            <p>Here,we sell all the fresh and organic products</p>
+          </div>
+          <div class="box">
+            <img
+              src="https://images.unsplash.com/photo-1595246140625-573b715d11dc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              alt=""
+            />
+            <h3>fast delivery</h3>
+            <p>All the organic products to your doorstep</p>
+          </div>
+          <div class="box">
+            <img
+              src="https://www.ischool.berkeley.edu/sites/default/files/styles/fullscreen/public/sproject_teaser_image/reversed.jpg?itok=ShdqgpJr"
+              alt=""
+            />
+            <h3>Plant Disease Detection</h3>
+            <p>here, at farmBuddy disease detection made easy</p>
+          </div>
+        </div>
+      </section>
+      <section class="categories" id="categories">
+        <h1 class="heading">product <span>categories</span></h1>
+        <div class="box-container">
+          <div class="box">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1663926032113-cc8eee2268e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG9yZ2FuaWMlMjB2ZWdnaWVzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+              alt=""
+            />
+            <h3>vegetables</h3>
+            <p>organically harvested veggies</p>
+          </div>
+          <div class="box">
+            <img
+              src="https://images.unsplash.com/photo-1498579397066-22750a3cb424?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZnJlc2glMjBmcnVpdHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+              alt=""
+            />
+            <h3>fresh fruits</h3>
+            <p>naturally produced fruits</p>
+          </div>
+
+          <div class="box">
+            <img
+              src="https://images.pexels.com/photos/4207908/pexels-photo-4207908.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
+            />
+            <h3>Organic Fertilizers</h3>
+            <p>Organically made Fertilizers for your home gardening</p>
+          </div>
+        </div>
+      </section>
+      <section class="products" id="products">
+        <h1 class="heading">our <span>products</span></h1>
+        <div class="swiper product-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide box">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1664114727339-a710cdbc5455?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmFybXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+                alt=""
+              />
+              <h3>orange</h3>
+              <div class="price"></div>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+
+            <div class="swiper-slide box">
+              <img
+                src="https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b25pb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+                alt=""
+              />
+              <h3>onion</h3>
+              <div class="price"></div>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <div class="swiper-slide box">
+              <h3 font-size="20">
+                <br />
+                <br />for<br />
+                more<br />
+                products
+              </h3>
+              <br />
+              <br />
+              <a href="./Cart" class="btn btn-cart-down">click here</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="learn" id="learn">
+        <h1 class="heading">Visit & <span>Learn</span></h1>
+        <div class="box-container">
+          <div class="box">
+            <img
+              src="https://www.ischool.berkeley.edu/sites/default/files/styles/fullscreen/public/sproject_teaser_image/reversed.jpg?itok=ShdqgpJr"
+              alt=""
+            />
+            <h3>Plant Disease Detection</h3>
+            <p>
+              In this digital era you can directly reach out to us and we will
+              help you to detect the disease in your plants.<br />
+              <a href="./Plants" class="btn">Click Here</a>
+            </p>
+          </div>
+          <div class="box">
+            <img
+              src="https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              alt=""
+            />
+            <h3>Weather updates</h3>
+            <p>
+              we update weather reports for farmer's convinience to check daily
+              updates of weather and plan their farming accordingly.
+            </p>
+            <a href="./Weather" class="btn">Click Here</a>
+          </div>
+          <div class="box">
+            <img
+              src="https://images.unsplash.com/photo-1515524042669-de726ea3283d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2125&q=80"
+              alt=""
+            />
+            <h3>Own a Farm</h3>
+            <p>
+              we also make it easy to find the nearest land for lease for the
+              farmers to grow their crops.<br />
+            </p>
+            <a href="./Map" class="btn">Click Here</a>
+          </div>
+        </div>
+      </section>
+      <section class="about" id="about">
+        <h1 class="heading">Our <span>Team</span></h1>
+        <div class="swiper about-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide box">
+              <img src="../photo/dicky.jpg" height="1420" width="1440"/>
+              <p>
+                "As the CEO of FarmBuddy, my goal is to create technology that
+                helps our farmers succeed. We're constantly exploring new ideas
+                and pushing the boundaries of what's possible,we know that every
+                improvement we make can have a real impact on the lives of
+                farmers and the health of our environment."
+              </p>
+              <a href="https://www.facebook.com/dodong.contiga"
+                >Dicky D, Contiga</a
+              >
+            </div>
+            <div class="swiper-slide box">
+              <img src="../photo/ricky.jpg" height="1438" width="1440"/>
+
+
+
+              <p>
+                "As the COO of FarmBuddy,I'm committed to ensuring that our
+                customers receive the highest quality products and services. We
+                strive to make our farm-to-table model efficient and
+                sustainable, and are constantly exploring new ways to improve
+                our operations."
+              </p>
+              <a0 href="https://www.facebook.com/ricky.contiga.3"
+                >Ricky D, Contiga</a0
+              >
+            </div>
+            <div class="swiper-slide box">
+              <img src="../photo/rubin.jpg" height="960" width="960"/>
+              <p>
+                "As the CTO of FarmBuddy, I am honored to be part of a team that
+                is dedicated to creating a sustainable and efficient farming
+                ecosystem. Our mission is to revolutionize the way food is
+                grown, distributed and consumed around the world, and to help
+                small-scale farmers thrive in the digital age."
+              </p>
+              <a href="https://www.facebook.com/ruben.chicote.7"
+                >Ruben Chicote</a
+              >
+            </div>
+
+            <div class="swiper-slide box">
+              <img src="../photo/edilbert contiga.jpg" height="960" width="958"/>
+              <p>
+                "As the CFO of FarmBuddy, I am proud to be a part of a team that
+                is committed to creating a positive impact in the agricultural
+                industry. Our goal is to ensure that the farmers we work with
+                have access to the necessary resources and funding to grow their
+                businesses sustainably.
+              </p>
+              <a href="https://www.facebook.com/edilbert.contiga"
+                >Edilbert G, Contiga</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="footer">
+        <div class="box-container">
+          <div class="box">
+            <h3>FarmBuddy <i class="fas fa-seedling"></i></h3>
+            <p>From our farm to your home without any intermediaries</p>
+            <div class="share">
+              <a
+                href="https://github.com/yna2000"
+                class="fab fab fa-linkedin"
+              ></a>
+              <a
+                href="Rickycontiga14@gmail.com"
+                class="fas fa-envelope"
+              ></a>
+              <a href="#" class="fas fa-phone"></a>
+              <a
+                href="https://www.google.com/maps/place/Cadunan,+Davao+de+Oro/@7.3390119,125.8981849,13z/data=!3m1!4b1!4m6!3m5!1s0x32f957ea1a781b87:0xa442904758cb2ad9!8m2!3d7.3351742!4d125.8988626!16s%2Fg%2F11f0wldtyn?entry=ttu"
+                class="fas fa-map-marker-alt"
+              ></a>
+              <div>
+                <iframe
+                  src="https://www.google.com/maps/place/Cadunan,+Davao+de+Oro/@7.3390115,125.8775853,14z/data=!3m1!4b1!4m6!3m5!1s0x32f957ea1a781b87:0xa442904758cb2ad9!8m2!3d7.3351742!4d125.8988626!16s%2Fg%2F11f0wldtyn?entry=ttu"
+                  width="300"
+                  height="150"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            <h3>quick links</h3>
+            <a href="#home" class="links">
+              <i class="fas fa-arrow-right"></i> home
+            </a>
+            <a href="#features" class="links">
+              <i class="fas fa-arrow-right"></i> features
+            </a>
+            <a href="#categories" class="links">
+              <i class="fas fa-arrow-right"></i> categories
+            </a>
+            <a href="./Cart" class="links">
+              <i class="fas fa-arrow-right"></i> products
+            </a>
+            <a href="#learn" class="links">
+              <i class="fas fa-arrow-right"></i> Learn
+            </a>
+            <a href="#about" class="links">
+              <i class="fas fa-arrow-right"></i> Team
+            </a>
+            <a href="./Sign-up" class="links sig">
+              <i class="fas fa-arrow-right"></i> Sign in/up
+            </a>
+          </div>
+
+          <div class="box">
+            <h3>newsletter</h3>
+            <p>subscribe for latest updates</p>
+            <input type="email" placeholder="your email" class="email ema" />
+            <input type="submit" value="subscribe" class="btn sub" />
+            <img
+              src="https://images.unsplash.com/photo-1525011268546-bf3f9b007f6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmlnaHQlMjBtYXJrfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+              class="payment-img"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- <iframe width="560" height="315" style="display: none;" src="https://www.youtube.com/embed/hdI2bqOjy3c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="560" height="315" style="display: none;" src="https://www.youtube.com/embed/hdI2bqOjy3c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="560" height="315" style="display: none;" src="https://www.youtube.com/embed/hdI2bqOjy3c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+
+    <!-- footer section ends -->
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+      import {
+        getDatabase,
+        ref,
+        get,
+        set,
+        child,
+        update,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyAOEIv9etildfP9b9DHsv4G6Vo2yKVROVA",
+        authDomain: "farmbuddy-106-360bc.firebaseapp.com",
+        projectId: "farmbuddy-106-360bc",
+        storageBucket: "farmbuddy-106-360bc.appspot.com",
+        messagingSenderId: "360911772552",
+        appId: "1:360911772552:web:92714ae9734c0c5775783d",
+        measurementId: "G-402FLY5R71"
+};
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase();
+      function GetData() {
+        const dbref = ref(db);
+        get(child(dbref, "people/" + "Name")).then((snapshot) => {
+          if (snapshot.exists()) {
+            if (snapshot.val().status === "true") {
+              document.querySelector(".sin").style.display = "none";
+              document.querySelector("#login-btn").style.display = "visible";
+              document
+                .querySelector(".btn-cart-down")
+                .addEventListener("click", () => {
+                  window.location.href = "./Cart/index.html";
+                });
+            } else {
+              document.querySelector("#login-btn").style.display = "none";
+
+              document
+                .querySelector("#cart-btn")
+                .addEventListener("click", () => {
+                  window.location.href = "./Sign-up/index.html";
+                });
+              document
+                .querySelector(".btn-cart-down")
+                .addEventListener("click", () => {
+                  window.location.href = "./Sign-up/index.html";
+                });
+            }
+          } else {
+            alert("error");
+          }
+        });
+      }
+      GetData();
+      var cartBtn = document.getElementById("cart-btn");
+      cartBtn.addEventListener("click", function () {
+        window.location.href = "./Cart/index.html";
+      });
+      const profile = document.getElementById("login-btn");
+      profile.addEventListener("click", function () {
+        window.location.href = "./Profile/index.html";
+      });
+    </script>
+    <script src="./Scripts/script.js"></script>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1%22%3E"></script>
+    <df-messenger
+      intent="WELCOME"
+      chat-title="FarmBuddy"
+      agent-id="e1f83922-37a6-488b-9c06-b8cc656319b3"
+      language-code="en"
+    ></df-messenger>
+  </body>
+</html>

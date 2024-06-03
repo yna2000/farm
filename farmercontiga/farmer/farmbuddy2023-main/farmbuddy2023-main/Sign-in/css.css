@@ -1,0 +1,14 @@
+/* Add hover effect to the sign-up link */
+.sign-up:hover {
+    color: #4caf50;
+}
+
+/* Animation for the sliding effect */
+.separator {
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.separator.collapsed {
+    max-height: 0;
+}
